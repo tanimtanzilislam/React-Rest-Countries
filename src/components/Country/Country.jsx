@@ -1,7 +1,10 @@
 
 import './Country.css';
 import { useState } from 'react';
-const Country = ({country}) => {
+const Country = ({country,handleVisitedCountries}) => {
+
+
+  console.log(handleVisitedCountries)
 
 
   const [visited,setVisited]=useState(false);
@@ -22,6 +25,7 @@ const Country = ({country}) => {
 
       // 3rd
       setVisited(!visited);
+      handleVisitedCountries(country);
     }
   return (
     //<div className={`country border-lg text-center ${visited ? 'country-visited' : 'country-not-visited'}`}>
